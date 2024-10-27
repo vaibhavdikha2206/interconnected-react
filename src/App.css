@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Reem Kufi", sans-serif !important;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -14,6 +15,31 @@ img {
   max-width: 1900px;
   margin: 0rem auto;
 }
+
+.parentapp {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Makes the app take up the full viewport height */
+}
+
+.content {
+  
+  flex-grow: 1; /* Makes this container fill up the remaining space */
+  display: flex;
+
+  padding: 20px;
+}
+
+
+.navbarcontainer {
+  min-height: auto;
+  width: 85vw;
+  max-width: 1900px;
+  margin: 0rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   max-width: 100%;
   overflow-x: hidden;
@@ -41,11 +67,12 @@ nav {
 }
 .primary-button {
   padding: 0.9rem 1.75rem;
+  margin: 10px;
   background-color: white;
   outline: none;
   border: none;
   border-radius: 5rem;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   cursor: pointer;
   font-weight: 600;
   transition: 0.2s;
@@ -64,6 +91,9 @@ nav {
   position: relative;
   display: flex;
   padding-top: 3rem;
+  width: 100%;
+  align-items: right;
+  justify-content: right;
 }
 .home-bannerImage-container {
   position: absolute;
@@ -76,6 +106,11 @@ nav {
   max-width: 600px;
   flex: 1;
 }
+.home-image-section-custom{
+  max-width: 600px;
+  flex: 1;
+  padding-top: 20px;
+}
 .home-text-section {
   flex: 1;
   display: flex;
@@ -87,11 +122,25 @@ nav {
   font-size: clamp(2rem, 5vw, 4rem);
   color: #4c4c4c;
   /* line-height: 5rem; */
+  max-width: 800px;
+  text-align: center; /* Center align the text */
+  margin: 0 auto; /* Center align the element itself */
+}
+.primary-heading-custom {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #4c4c4c;
+  /* line-height: 5rem; */
   max-width: 600px;
 }
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
   max-width: 500px;
+  color: #6a6a6a;
+  margin: 1.5rem 0rem;
+}
+.primary-text-custom {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 600px;
   color: #6a6a6a;
   margin: 1.5rem 0rem;
 }
@@ -124,6 +173,15 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
+.review-section-container {
+  margin-top: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .about-background-image-container {
   position: absolute;
   left: -150px;
@@ -260,8 +318,15 @@ nav {
 .testimonial-section-bottom h2 {
   margin-top: 1.5rem;
 }
+a:hover {
+  cursor: pointer; /* Change cursor to a pointer */
+}
+
 .work-section-wrapper {
-  margin-top: 15rem;
+  padding-top: 15rem;
+}
+.review-section-wrapper {
+  padding-top: 10rem;
 }
 .work-section-top p {
   text-align: center;
@@ -278,7 +343,7 @@ nav {
 }
 .work-section-info {
   width: 290px;
-  min-height: 350px;
+  min-height: 450px;
   background-color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -306,6 +371,61 @@ nav {
   align-items: center;
   font-weight: 600;
 }
+
+.product-screen-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 4rem 0rem;
+}
+
+
+.product-form-container {
+  background-color: white;
+  max-width: 700px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5rem;
+  border: 2px solid #FE9E0D;
+  margin-bottom: 10%;
+}
+.product-form-container input {
+
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+[data-letters]:before {
+  content:attr(data-letters);
+  display:inline-block;
+  margin: 0.9rem 1.75rem;
+  font-size:1em;
+  width:2.5em;
+  height:2.5em;
+  line-height:2.5em;
+  text-align:center;
+  border-radius:50%;
+  background:plum;
+  vertical-align:middle;
+  margin-right:1em;
+  color:white;
+  }
+
+  [data-letters]:hover:before {
+    background: darkmagenta; /* New background color on hover */
+  }
 
 @media (max-width: 1000px) {
   .navbar-links-container a {
@@ -346,6 +466,11 @@ nav {
     width: 100%;
     max-width: 400px;
   }
+  .home-image-section-custom{
+    width: 100%;
+    max-width: 400px;
+  }
+
   .primary-heading {
     text-align: center;
     max-width: 90%;
@@ -426,3 +551,5 @@ nav {
     display: none;
   }
 }
+
+

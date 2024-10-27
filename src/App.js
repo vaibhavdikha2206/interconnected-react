@@ -1,21 +1,82 @@
 import "./App.css";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Work from "./Components/Work";
-import Testimonial from "./Components/Testimonial";
-import Contact from "./Components/Contact";
-import Footer from "./Components/Footer";
+import LoginForm from "./Components/Login/LoginForm";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./Components/Landing/LandingPage";
+import Navbar from "./Components/Landing/Navbar";
+import Reviews from "./Components/Landing/Reviews";
+import { useRef } from "react";
+import UserProfile from "./Components/UserProfile/UserProfile";
+import ExperList from "./Components/ProductItems/ExpertList/ExperList";
+import Slots from "./Components/Slots/Slots";
+import React, { useState, CSSProperties } from "react";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 function App() {
+  const reviewSectionReference = useRef(null);
+  const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
+  let [color, setColor] = useState("#fe9e0d");
+  
+  const scrollToSection = (sectionRef) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  let [loading, setLoading] = useState(false);
+
+  const override = {
+    display: "block",
+    margin: "auto auto",
+    borderColor: "#484848",
+  };
+
+  // Function to update the text field value
+  const toggleLoadingState = (loadingState) => {
+    setLoading(loadingState);
+  };
+
   return (
-    <div className="App">
-      <Home />
-      <About />
-      <Work />
-      <Testimonial />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="parentapp">
+        <div className="navbarcontainer">
+          <Navbar
+            onButtonClick={scrollToSection}
+            reviewSectionReference={reviewSectionReference}
+          />
+        </div>
+
+        <PropagateLoader
+          color={color}
+          loading={loading}
+          cssOverride={override}
+          size={15}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+
+        {!loading && (
+          <div className="content">
+            <Routes>
+              <Route path="/">
+                <Route
+                  index
+                  element={
+                    <LandingPage
+                      reviewSectionReference={reviewSectionReference}
+                    />
+                  }
+                />
+
+                <Route path="login" element={<LoginForm toggleLoadingState={toggleLoadingState}/>} />
+                <Route path="whatever" element={<Reviews />} />
+                <Route path="products" element={<ExperList toggleLoadingState={toggleLoadingState}/>} />
+                <Route path="profile" element={<UserProfile />} />
+                <Route path="slots" element={<Slots />} />
+              </Route>
+            </Routes>
+          </div>
+        )}
+      </div>
+    </Router>
   );
 }
 

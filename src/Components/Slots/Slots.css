@@ -1,0 +1,22 @@
+.slots-section-top {
+    display: flex;
+    margin-top: 1%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slots-headings-section{
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slotcard {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2% auto;
+    box-shadow: 0 0 5px #ccc;
+  }

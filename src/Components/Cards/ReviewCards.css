@@ -1,0 +1,45 @@
+.review-cards {
+    width: 75%;
+    margin: auto;
+}
+
+.topmargin {
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    height: 450px;
+    color: black;
+    border-radius: 0.75rem; /* or 12px */
+}
+
+.review-image {
+    border-top-left-radius: 0.75rem; /* or 12px */
+    border-top-right-radius: 0.75rem; /* or 12px */
+    background: #FE9E0D ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14rem; /* or 224px */
+}
+
+.review-image-tag {
+    height: 11rem;
+    width: 11rem;
+    border-radius: 50%;
+}
+
+.review-text-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Adjust as needed */
+    padding: 1rem; /* Adjust as needed */
+}
+
+.review-text-title {
+    font-size: 1.25rem; /* Equivalent to text-xl (20px base font size) */
+    font-weight: 600; /* Equivalent to font-semibold */
+}
