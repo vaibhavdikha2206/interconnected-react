@@ -44,16 +44,6 @@ function App() {
           />
         </div>
 
-        <PropagateLoader
-          color={color}
-          loading={loading}
-          cssOverride={override}
-          size={15}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-
-        {!loading && (
           <div className="content">
             <Routes>
               <Route path="/">
@@ -74,7 +64,7 @@ function App() {
               </Route>
             </Routes>
           </div>
-        )}
+
       </div>
     </Router>
   );
