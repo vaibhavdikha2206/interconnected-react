@@ -1,9 +1,8 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProductItems.css";
 import BookNowCard from "../../Cards/BookNowCard";
 import { expertListApiService } from "./ExpertListApiService";
-import LoaderContainer from '../../LoaderContainer';
-import { product_card, product_card2 } from './product_data';
+import LoaderContainer from "../../LoaderContainer";
 
 function ExperList() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,13 +11,11 @@ function ExperList() {
 
   //console.log(product_card); // mocked
 
-
-
   useEffect(() => {
     // Simulate an async operation
     const fetchData = async () => {
       setLoading(true);
-      fetchExpertData()
+      fetchExpertData();
     };
 
     fetchData();
@@ -35,6 +32,26 @@ function ExperList() {
     } finally {
       setLoading(false);
     }
+  };
+
+  // Helper function for skills search
+  const searchInSkills = (skills, searchTerm) => {
+    const curatedSearch = skills
+      .map((skill) => skill.name)
+      .join(", ")
+      .toLowerCase();
+    if (!skills || !Array.isArray(skills)) return false; // Handle edge cases
+    return curatedSearch.toLowerCase().includes(searchTerm.toLowerCase());
+  };
+
+  // Helper function for skills search
+  const searchInOrg = (org, searchTerm) => {
+    return org.toLowerCase().includes(searchTerm.toLowerCase());
+  };
+
+  // Helper function for skills search
+  const searchInOtherDetails = (otherDetails, searchTerm) => {
+    return otherDetails.toLowerCase().includes(searchTerm.toLowerCase());
   };
 
   return (
@@ -59,10 +76,9 @@ function ExperList() {
                 if (searchTerm == "") {
                   return val;
                 } else if (
-                  val.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                  val.otherDetails
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
+                  (val.organization != null && val.organization.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                  searchInOtherDetails(val.otherDetails, searchTerm) ||
+                  searchInSkills(val.skills, searchTerm) // Use the helper function here
                 ) {
                   return val;
                 }
@@ -73,9 +89,8 @@ function ExperList() {
           </div>
         </div>
       </div>
-      </LoaderContainer>
+    </LoaderContainer>
   );
 }
 
 export default ExperList;
-

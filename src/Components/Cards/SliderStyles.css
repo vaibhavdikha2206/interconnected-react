@@ -7,3 +7,7 @@
 .slick-slide > div{
     margin: 0 10px;
 }
+
+.slider-text{
+    text-align: center;
+}

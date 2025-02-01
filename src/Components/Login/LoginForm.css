@@ -8,6 +8,17 @@
     color: #FE9E0D;
 }
 
+.container22 {
+    flex-grow: 1; /* Fills remaining space */
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    max-width: 1900px;
+    margin: 0 auto;
+    color: #FE9E0D;
+    background-color: #f4f4f4;
+  }
+
 
 .parent-login {
     font-family: "Poppins", sans-serif;

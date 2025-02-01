@@ -1,9 +1,10 @@
 import { API_BASE_URL } from "../../../Constants";
+import { accessToken } from "../../../tokenConst";
 
 export async function expertListApiService() {
   try {
     const storedObject = JSON.parse(localStorage.getItem("loginData"));
-    var accessToken = storedObject.response.accessToken;
+    //var accessToken = storedObject.response.accessToken;
     console.log("fetched access token " + accessToken); // Should log { key: 'value' }
 
     const response = await fetch(`${API_BASE_URL}/api/experts/list`, {

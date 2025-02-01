@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../../../Assets/Interview.png";
 import PaymentButton from "../../../Slots/PaymentsButton";
 
-export default function SlotCard({ slotData }) {
+export default function SlotCard({ expertId,item,slotData,serviceName,price }) {
   return (
     <div className="slotcard">
       <div className="details">
@@ -12,8 +12,8 @@ export default function SlotCard({ slotData }) {
 
         <div className="box">
           <div className="row">
-            <h2>Day : {slotData.dayOfWeek}</h2>
-            <span>$ price</span>
+            <h2>{serviceName}</h2>
+            <span>INR: {price}</span>
           </div>
 
           <p>Day : {slotData.dayOfWeek}</p>
@@ -21,7 +21,7 @@ export default function SlotCard({ slotData }) {
 
           <div className="button-container">
             <button className="secondary-button">Book Slot</button>
-            <PaymentButton/>
+            <PaymentButton expertId={expertId} item={item} slotData={slotData} price={price}/>
           </div>
         </div>
       </div>

@@ -44,23 +44,18 @@ const data = [
   {
     name: "Vaibhav",
     img: `../../Assets/testimg6.png`,
-    review: "Yea Whatever , Yea Whatever ",
+    review: "Helped me stay one step ahead of others.",
   },
   {
     name: "Sabhar",
     img: "../../Assets/testimg7.png",
-    review: "Mooooooooo",
+    review: "Its a must try for interview preparations.",
   },
   {
     name: "Sabhar",
     img: "../../Assets/testimg7.png",
-    review: "Mooooooooo",
-  },
-  {
-    name: "Sabhar",
-    img: "../../Assets/testimg7.png",
-    review: "Mooooooooooooooooooooooo",
-  },
+    review: "Kudos to the makers for this great Initiative",
+  }
 ];
 
 const settings = {

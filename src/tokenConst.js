@@ -1,0 +1,2 @@
+export const accessToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWliaGF2ZGlraGFAZ21haWwuY29tIiwiaWF0IjoxNzM2NjkwNjQxLCJleHAiOjE3Mzc1OTA2NDF9.mUXFHmCwVbzY-LcEmmlQPrHb0-KD6VwC5GeUJ7TPFZZp6csP7IhSeS8zVsf2MRnE_sgjborkJD6uJXy2yJvVow"
+export const razorPayKey = "rzp_test_Yd10eZ5az25457"    

@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useRef, useState, useEffect } from "react";
+import React, {  useState, useEffect } from "react";
 import Logo from "../../Assets/Logo.svg";
-import { BsFiles } from "react-icons/bs";
-import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";

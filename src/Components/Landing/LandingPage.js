@@ -20,8 +20,8 @@ const LandingPage = ({reviewSectionReference}) => {
             <Reviews/>
           </div>
           <About />
-          <Testimonial />
-          <Contact />
+          {/* <Testimonial />
+          <Contact /> */}
           <Footer />
           
     </div>

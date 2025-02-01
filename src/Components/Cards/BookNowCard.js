@@ -30,17 +30,11 @@ export default function BookNowCard({ user }) {
 
           <p>
             <span className="bold-text">Expertise : </span>
-            {
-              user.skills.map((skill) => (
-                <div key={skill.id}>{skill.name}</div> // Each skill's name will appear on a new line
-                )
-              )
-            }
+            {user.skills.map((skill) => (
+              <div key={skill.id}>{skill.name}</div> // Each skill's name will appear on a new line
+            ))}
           </p>
-          <p className="price">
-            {user.price}
-            <span>{user.currency}</span>
-          </p>
+
           <div onClick={handleClick} className="btn">
             Book Now
           </div>

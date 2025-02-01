@@ -10,17 +10,17 @@ const Work = () => {
     {
       image: PickMeals,
       title: "Interview Preparation",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et",
+      text: "Be better prepared for your upcoming interviews by consulting actual employees",
     },
     {
       image: ChooseMeals,
       title: "Expert \nConsultation",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et ",
+      text: "Consult an expert on the topic of your choice",
     },
     {
       image: DeliveryMeals,
       title: "Query Resolution",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
+      text: "Have a query ? Get it resolved from the best in the game",
     },
   ];
   return (
@@ -30,8 +30,7 @@ const Work = () => {
         <p className="primary-subheading">Work</p>
         <h1 className="primary-heading">How It Works</h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+        Users sign up, connect with experienced professionals for mock interviews, and receive personalized feedback to improve their performance.
         </p>
       </div>
       <div className="work-section-bottom">

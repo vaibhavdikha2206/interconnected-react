@@ -1,3 +1,6 @@
+import { API_BASE_URL } from "../../../Constants";
+import { accessToken } from "../../../tokenConst";
+
 export async function fetchDataForUserProfile() {
     /*try {
       //const response = await fetch("https://swapi.dev/api/${text}/?format=json");
@@ -16,6 +19,35 @@ export async function fetchDataForUserProfile() {
 
       return profileData
   }
+
+  export async function expertDetailsApiService(expertId) {
+    try {
+      const storedObject = JSON.parse(localStorage.getItem("loginData"));
+      //var accessToken = storedObject.response.accessToken;
+      //var accessToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWliaGF2ZGlraGEyMjA0QGdtYWlsLmNvbSIsImlhdCI6MTczMTYxNjc4MywiZXhwIjoxNzMyNTE2NzgzfQ.gA03lJVMP_8wMhlfkEL4bmM-IZjb_R_h01LLiaqMosge7lC7V6qlne2923l0kGiRdhmeXfErOYT5-QQeZVmyLA"
+      console.log("fetched access token " + accessToken); // Should log { key: 'value' }
+  
+      const response = await fetch(`${API_BASE_URL}/api/experts/${expertId}/details`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + accessToken,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      const data = await response.json();
+      console.log("Data from Expert Details API " + JSON.stringify(data));
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      throw error;
+    }
+  }
+
+  
 
 export const profileData =
     {

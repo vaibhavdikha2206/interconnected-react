@@ -20,7 +20,7 @@ export default function TestimonialCards({ data }) {
         </div>
         <div className="review-text-items">
           <p className="review-text-title">{data.name}</p>
-          <p>{data.review}</p>
+          <p className="slider-text">{data.review}</p>
           <button className="secondary-button">Read More</button>
         </div>
       </div>

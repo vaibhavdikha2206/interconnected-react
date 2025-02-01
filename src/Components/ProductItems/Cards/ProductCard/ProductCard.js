@@ -8,13 +8,13 @@ export default function ProductCard({ item,fullitem }) {
   const navigate = useNavigate();
   
   const navigateToSlots = () => {
-    var timeslots =  fullitem.timeslots 
+    var timeslots =  fullitem.timeSlots 
     var service =  item.serviceName
-
+    const expertId = fullitem?.expert?.id
     console.log("serviceName : "+item.serviceName)
     console.log("timeslots : "+timeslots[0].dayOfWeek)
     navigate('/slots',{ 
-      state: { fullitem,item }
+      state: { timeslots,item,expertId }
     }
   ); // Replace '/target-page' with your route
   };

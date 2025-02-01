@@ -1,31 +1,31 @@
-import React,{useEffect} from "react";
+import { useState, useEffect } from "react";
 import "./Slots.css";
 import SlotCard from "../ProductItems/Cards/SlotCard/SlotCard";
 import { useLocation } from 'react-router-dom';
+import LoaderContainer from "../LoaderContainer";
 
 export default function Slots() {
   
   const location = useLocation();
-  const { fullitem,item } = location.state || {};
-  
+  const { timeslots,item,expertId } = location.state || {};
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log('Timeslots:'+fullitem.timeslots[0].dayOfWeek);
     console.log('Service:'+item.serviceName);
-    console.log('fullitem :',fullitem);
   }, [location]);
 
   return (
+    <LoaderContainer loading={loading}>
     <div className="slots-section-top">
       <div className="slots-headings-section">
-        <h1 className="primary-heading">T  B D {item.serviceName}</h1>
-        <p className="primary-subheading">{fullitem.name}</p>
-        <p className="primary-subheading">{fullitem.organization}</p>
+        <h1 className="primary-heading">{item.serviceName}</h1>
       </div>
-      {fullitem.timeslots.map((slot) => (
-        <SlotCard slotData={slot} />
+      {timeslots.map((slot) => (
+        <SlotCard expertId={expertId} item={item} slotData={slot} serviceName={item.serviceName} price={item.price} />
       ))}
     </div>
+    </LoaderContainer>
   );
 }
 

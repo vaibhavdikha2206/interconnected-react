@@ -10,6 +10,9 @@ import ExperList from "./Components/ProductItems/ExpertList/ExperList";
 import Slots from "./Components/Slots/Slots";
 import React, { useState, CSSProperties } from "react";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import SuccessPage from "./Screens/SuccessScreen";
+import LoginDialog from "./Components/Login/LoginPopup";
+import FailurePage from "./Screens/FailureScreen";
 
 function App() {
   const reviewSectionReference = useRef(null);
@@ -61,8 +64,12 @@ function App() {
                 <Route path="products" element={<ExperList toggleLoadingState={toggleLoadingState}/>} />
                 <Route path="profile" element={<UserProfile />} />
                 <Route path="slots" element={<Slots />} />
+                <Route path="success" element={<SuccessPage />} />
+                <Route path="failure" element={<FailurePage />} />
               </Route>
             </Routes>
+            
+            
           </div>
 
       </div>

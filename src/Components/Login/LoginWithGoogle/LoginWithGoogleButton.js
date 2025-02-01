@@ -17,7 +17,8 @@ const LoginWithGoogleButton = (props) => {
 
       const loginResponseStore = {
         loggedIn  : true,
-        response : loginResponse
+        response : loginResponse,
+        initials : "VV"
       }
 
       props.storeToLocalStorage({loginResponseStore})
@@ -28,7 +29,7 @@ const LoginWithGoogleButton = (props) => {
     } catch (error) {
       alert("Invalid Entry ");
       console.log(error);
-     
+      props.toggleLoadingState(false)
       throw error;
     }
 

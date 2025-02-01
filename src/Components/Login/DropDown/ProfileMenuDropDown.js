@@ -7,17 +7,28 @@ function ProfileMenuDropDown() {
  
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  
+  const [dataLetters, setDataLetters] = useState("");
+
   const navigateToHome = () => {
     navigate('/'); // Replace '/target-page' with your route
   };
   
+  useEffect(() => {
+    // Fetch the value from local storage when the component mounts
+    const storedObject = JSON.parse(localStorage.getItem("loginData"));
+    var initials = storedObject.initials;
+
+    if (initials) {
+      setDataLetters(initials);
+    }
+  }, []);
+
   return (
     <>
 
 
       <div className="logoutContainer">
-        <a data-letters="VD" onClick={()=>{setOpen(!open)}}></a>
+        <a data-letters={dataLetters} onClick={()=>{setOpen(!open)}}></a>
 
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`}>
           <h3>The Kiet<br/><span>Website Designer</span></h3>
